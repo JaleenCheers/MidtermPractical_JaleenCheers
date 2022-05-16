@@ -4,19 +4,24 @@
 #include <iostream>
 #include <conio.h>
 void MathProblem(int _rand1, int _rand2, int _op);
-bool ValidateInt();
 void Continue();
 
 int main()
 {
 	srand(time(0));
+	for (int i = 0; i < 5; ++i) {
+
 	int rand1 = rand() % 9999;
 	int rand2 = rand() & 9999;
 	int op = rand() % 5;
 
-	MathProblem(rand1, rand2, op);
-	Continue();
+	
 
+		MathProblem(rand1, rand2, op);
+		
+	}
+	
+	Continue();
 
 }
 
@@ -60,9 +65,9 @@ void MathProblem(int _rand1, int _rand2, int _op) {
 		std::cin >> userInput;
 
 		if (userInput == 1)
-			std::cout << "Correct!";
-		else
-			std::cout << "WRONG!!!";
+			std::cout << "Correct!" << std::endl;
+		else					   
+			std::cout << "WRONG!!!" << std::endl;
 		break;
 	case 2:
 		std::cout << "1. " << rand() << std::endl;
@@ -71,10 +76,10 @@ void MathProblem(int _rand1, int _rand2, int _op) {
 		std::cout << "4. " << rand() % INT_MAX << std::endl;
 		std::cin >> userInput;
 
-		if (userInput == 2 )
-			std::cout << "Correct!";
+		if (userInput == 2)
+			std::cout << "Correct!" << std::endl;
 		else
-			std::cout << "WRONG!!!";
+			std::cout << "WRONG!!!" << std::endl;
 		break;
 	case 3:
 		std::cout << "1. " << rand() << std::endl;
@@ -83,10 +88,10 @@ void MathProblem(int _rand1, int _rand2, int _op) {
 		std::cout << "4. " << rand() % INT_MAX << std::endl;
 		std::cin >> userInput;
 
-		if (userInput == 3 )
-			std::cout << "Correct!";
+		if (userInput == 3)
+			std::cout << "Correct!" << std::endl;
 		else
-			std::cout << "WRONG!!!";
+			std::cout << "WRONG!!!" << std::endl;
 		break;
 	case 4:
 		std::cout << "1. " << rand() << std::endl;
@@ -96,9 +101,9 @@ void MathProblem(int _rand1, int _rand2, int _op) {
 		std::cin >> userInput;
 
 		if (userInput == 4)
-			std::cout << "Correct!";
+			std::cout << "Correct!" << std::endl;
 		else
-			std::cout << "WRONG!!!";
+			std::cout << "WRONG!!!" << std::endl;
 		break;
 	default:
 		std::cout << "1. " << rand() % 1000 << std::endl;
@@ -106,12 +111,12 @@ void MathProblem(int _rand1, int _rand2, int _op) {
 		std::cout << "3. " << rand() << std::endl;
 		std::cout << "4. " << answer << std::endl;
 		if (userInput == 4)
-			std::cout << "Correct!";
+			std::cout << "Correct!" << std::endl;
 		else
-			std::cout << "WRONG!!!";
+			std::cout << "WRONG!!!" << std::endl;
 		break;
 	}
-	
+
 
 }
 
