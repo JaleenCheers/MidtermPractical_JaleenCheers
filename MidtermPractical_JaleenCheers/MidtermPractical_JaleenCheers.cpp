@@ -8,17 +8,58 @@ int main()
 	srand(time(0));
 	int rand1 = rand();
 	int rand2 = rand();
-	int op = rand() % 4;
+	int op = rand() % 5;
 
-	
+
 }
 
-//void MathProblem(int _rand1, int _rand2) {
-//
-//}
-//void Problem() {
-//
-//}
+void MathProblem(int _rand1, int _rand2, int _op) {
+	char opChar;
+	int userInput;
+	bool loop = false;
+	switch (_op)
+	{
+	case 1:
+		opChar = '+';
+		break;
+	case 2:
+		opChar = '-';
+		break;
+	case 3:
+		opChar = '/';
+		break;
+	case 4:
+		opChar = '*';
+		break;
+	default:
+		break;
+	}
+
+	std::cout << "What is " << _rand1 << opChar << _rand2 << ": ";
+	while (!loop) {
+		std::cin >> userInput;
+		loop = ValidateInt();
+	}
+}
+void Problem() {
+
+}
+bool ValidateInt() {
+	bool success;
+
+	if (std::cin.fail())
+	{
+		success = false;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX, '\n');
+		std::cout << "Invalid input...Must be an int...Try again" << std::endl;
+	}
+	else
+	{
+		success = true;
+	}
+	return success;
+}
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
