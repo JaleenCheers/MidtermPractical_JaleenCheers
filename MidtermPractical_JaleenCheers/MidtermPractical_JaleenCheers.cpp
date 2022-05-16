@@ -3,17 +3,22 @@
 
 #include <iostream>
 
+int MathProblem(int _rand1, int _rand2, int _op);
+void Problem();
+bool ValidateInt();
+
 int main()
 {
 	srand(time(0));
 	int rand1 = rand();
 	int rand2 = rand();
 	int op = rand() % 5;
+	MathProblem(rand1, rand2, op);
 
 
 }
 
-void MathProblem(int _rand1, int _rand2, int _op) {
+int MathProblem(int _rand1, int _rand2, int _op) {
 	char opChar;
 	int userInput;
 	bool loop = false;
