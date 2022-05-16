@@ -2,63 +2,124 @@
 //
 
 #include <iostream>
+#include <conio.h>
+void MathProblem(int _rand1, int _rand2, int _op);
+bool ValidateInt();
+void Continue();
 
 int main()
 {
 	srand(time(0));
-	int rand1 = rand();
-	int rand2 = rand();
+	int rand1 = rand() % 9999;
+	int rand2 = rand() & 9999;
 	int op = rand() % 5;
+
+	MathProblem(rand1, rand2, op);
+	Continue();
 
 
 }
 
 void MathProblem(int _rand1, int _rand2, int _op) {
 	char opChar;
-	int userInput;
+	int userInput = 0;
+	int rando = rand() % 5;
+	int answer = 0;
 	bool loop = false;
-	switch (_op)
+
+
+
+	if (_op == 1) {
+		opChar = '+';
+		answer = _rand1 + _rand2;
+	}
+	else if (_op == 2) {
+		opChar = '-';
+		answer = _rand1 - _rand2;
+	}
+	else if (_op == 3) {
+		opChar = '%';
+		answer = _rand1 % _rand2;
+	}
+	else {
+		opChar = '*';
+		answer = _rand1 * _rand2;
+	}
+
+
+
+	std::cout << "What is " << _rand1 << " " << opChar << " " << _rand2 << std::endl;
+
+	switch (rando)
 	{
 	case 1:
-		opChar = '+';
+		std::cout << "1. " << answer << std::endl;
+		std::cout << "2. " << rand() << std::endl;
+		std::cout << "3. " << rand() % 1000 << std::endl;
+		std::cout << "4. " << rand() % INT_MAX << std::endl;
+		std::cin >> userInput;
+
+		if (userInput == 1)
+			std::cout << "Correct!";
+		else
+			std::cout << "WRONG!!!";
 		break;
 	case 2:
-		opChar = '-';
+		std::cout << "1. " << rand() << std::endl;
+		std::cout << "2. " << answer << std::endl;
+		std::cout << "3. " << rand() % 1000 << std::endl;
+		std::cout << "4. " << rand() % INT_MAX << std::endl;
+		std::cin >> userInput;
+
+		if (userInput == 2 )
+			std::cout << "Correct!";
+		else
+			std::cout << "WRONG!!!";
 		break;
 	case 3:
-		opChar = '/';
+		std::cout << "1. " << rand() << std::endl;
+		std::cout << "2. " << rand() % 1000 << std::endl;
+		std::cout << "3. " << answer << std::endl;
+		std::cout << "4. " << rand() % INT_MAX << std::endl;
+		std::cin >> userInput;
+
+		if (userInput == 3 )
+			std::cout << "Correct!";
+		else
+			std::cout << "WRONG!!!";
 		break;
 	case 4:
-		opChar = '*';
+		std::cout << "1. " << rand() << std::endl;
+		std::cout << "2. " << rand() % INT_MAX << std::endl;
+		std::cout << "3. " << rand() % 1000 << std::endl;
+		std::cout << "4. " << answer << std::endl;
+		std::cin >> userInput;
+
+		if (userInput == 4)
+			std::cout << "Correct!";
+		else
+			std::cout << "WRONG!!!";
 		break;
 	default:
+		std::cout << "1. " << rand() % 1000 << std::endl;
+		std::cout << "2. " << rand() % INT_MAX << std::endl;
+		std::cout << "3. " << rand() << std::endl;
+		std::cout << "4. " << answer << std::endl;
+		if (userInput == 4)
+			std::cout << "Correct!";
+		else
+			std::cout << "WRONG!!!";
 		break;
 	}
-
-	std::cout << "What is " << _rand1 << opChar << _rand2 << ": ";
-	while (!loop) {
-		std::cin >> userInput;
-		loop = ValidateInt();
-	}
-}
-void Problem() {
+	
 
 }
-bool ValidateInt() {
-	bool success;
 
-	if (std::cin.fail())
-	{
-		success = false;
-		std::cin.clear();
-		std::cin.ignore(INT_MAX, '\n');
-		std::cout << "Invalid input...Must be an int...Try again" << std::endl;
-	}
-	else
-	{
-		success = true;
-	}
-	return success;
+void Continue()
+{
+	std::cout << "Press any key to continue" << std::endl;
+	if (_getch())
+		system("cls");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
