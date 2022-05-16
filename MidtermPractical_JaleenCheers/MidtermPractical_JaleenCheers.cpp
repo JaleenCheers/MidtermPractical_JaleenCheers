@@ -5,10 +5,10 @@
 
 int main()
 {
-	/*srand(time(0));
+	srand(time(0));
 	int rand1 = rand();
 	int rand2 = rand();
-	int op = rand() % 4;*/
+	int op = rand() % 4;
 
 	
 }
