@@ -11,7 +11,7 @@ int main()
 	srand(time(0));
 	for (int i = 0; i < 5; ++i) {
 
-	int rand1 = rand() % 9999;
+	int rand1 = rand() % 9999; 
 	int rand2 = rand() & 9999;
 	int op = rand() % 5;
 
